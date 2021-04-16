@@ -3,9 +3,9 @@
     $ctrl = new UserController();
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
-        if(isset($_GET['action']) && $_GET['action']=='getuser'){            
+        // if(isset($_GET['action']) && $_GET['action']=='getuser'){            
             echo json_encode($ctrl->getUser());
-        }
+        // }
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['action']) && $_POST['action']=='getsingleuser'){
