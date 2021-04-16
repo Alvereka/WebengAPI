@@ -23,6 +23,8 @@ class DbConnect
     {
         // Connecting to mysql database
         $this->conn = new mysqli('35.185.177.70', 'dbadmin', 'admin123', 'bookstore');
+        // $this->conn = new mysqli('localhost', 'root', '', 'bookstore');
+
 
         // Check for database connection error
         if (mysqli_connect_errno()) {
