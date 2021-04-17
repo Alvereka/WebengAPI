@@ -110,6 +110,52 @@ class BookFacade{
             return BOOK_TIDAK_DITEMUKAN;
         }
     }
+    public function getBookbyCategory ($category){
+        $stmt = $this->conn->prepare("SELECT * FROM books WHERE kategori=? ");
+        $stmt ->bind_param('s', $category);
+        $stmt->execute();
+        // URUT YA BOSKUUUU
+        $stmt->bind_result($id, $judul, $author, $terbit, $kategori, $deskripsi, $pdf,$gambar);
+
+        $book = array();
+        $i=0;
+        while($data = $stmt->fetch()){
+            $book[$i]['id'] = $id;
+            $book[$i]['judul'] = $judul;
+            $book[$i]['author'] = $author;
+            $book[$i]['terbit'] = $terbit;
+            $book[$i]['kategori'] = $kategori;
+            $book[$i]['deskripsi'] = $deskripsi;
+            $book[$i]['pdf'] = $pdf;
+            $book[$i]['gambar'] = $gambar;
+            
+            $i++;
+        }
+        return $book;
+    }
+    public function cari ($judul){
+        $stmt = $this->conn->prepare("SELECT * FROM books WHERE judul=? ");
+        $stmt ->bind_param('s', $judul);
+        $stmt->execute();
+        // URUT YA BOSKUUUU
+        $stmt->bind_result($id, $judul, $author, $terbit, $kategori, $deskripsi, $pdf,$gambar);
+
+        $book = array();
+        $i=0;
+        while($data = $stmt->fetch()){
+            $book[$i]['id'] = $id;
+            $book[$i]['judul'] = $judul;
+            $book[$i]['author'] = $author;
+            $book[$i]['terbit'] = $terbit;
+            $book[$i]['kategori'] = $kategori;
+            $book[$i]['deskripsi'] = $deskripsi;
+            $book[$i]['pdf'] = $pdf;
+            $book[$i]['gambar'] = $gambar;
+            
+            $i++;
+        }
+        return $book;
+    }
 
 
 }

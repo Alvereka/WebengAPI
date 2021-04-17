@@ -41,6 +41,14 @@
             
             echo json_encode($ctrl->updateUser($judul, $author, $terbit, $kategori, $deskripsi, $pdf,$gambar));
         }
+        if(isset($_POST['action']) && $_POST['action']=='cariKategori'){
+            $kategori =$_REQUEST['kategori'];
+            echo json_encode($ctrl->getBookbyCategory($kategori));
+        }
+        if(isset($_POST['action']) && $_POST['action']=='cari'){
+            $kategori =$_REQUEST['judul'];
+            echo json_encode($ctrl->cari($judul));
+        }
     }
 
 ?>

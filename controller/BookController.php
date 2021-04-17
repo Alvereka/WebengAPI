@@ -29,6 +29,14 @@
         {
             return $this->fcd->getSingleBook($judul,$author);
         }
+        public function getBookbyCategory($category)
+        {
+            return $this->fcd->getBookbyCategory($category);
         
+        }
+        public function cari($judul)
+        {
+            return $this->fcd->cari($judul);
+        }
     }
 ?>

@@ -46,6 +46,7 @@
         public function register($gender, $pass, $email, $name, $phone, $status){
             return $this->fcd->createUser($gender, $pass, $email, $name, $phone, $status);
         }
+        
 
         
         
