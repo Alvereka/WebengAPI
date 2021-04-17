@@ -25,7 +25,7 @@ class UserFacade{
             $user[$i]['phone'] = $phone;
             $user[$i]['status'] = $status;
             $user[$i]['gender'] = $gender;
-            $user[$i]['passowrd'] = $pass;
+            $user[$i]['password'] = $pass;
             $i++;
         }
         return $user;
@@ -85,7 +85,7 @@ class UserFacade{
             $user[$i]['phone'] = $phone;
             $user[$i]['status'] = $status;
             $user[$i]['gender'] = $gender;
-            $user[$i]['passowrd'] = $pass;
+            $user[$i]['password'] = $pass;
             $i++;
         }
         return $user;
@@ -108,7 +108,7 @@ class UserFacade{
             $user[$i]['phone'] = $phone;
             $user[$i]['status'] = $status;
             $user[$i]['gender'] = $gender;
-            $user[$i]['passowrd'] = $passw;
+            $user[$i]['password'] = $passw;
             $i++;
         }
         return $user;
